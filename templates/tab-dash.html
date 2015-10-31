@@ -1,0 +1,44 @@
+  <ion-view view-title="Dashboard">
+	<ion-nav-buttons side="right">
+    <button class="button button-icon" ng-click="showMenu($event)">
+     <i class="icon ion-android-more-vertical"></i>
+    </button>
+  </ion-nav-buttons>
+	<ion-content class="padding">
+		<div class="list card" ng-repeat="post in posts">
+
+		  <div class="item item-avatar">
+			<img ng-src="{{post.face}}">
+			<h2>{{post.name}}</h2>
+			<p>{{post.posted_on}}</p>
+		  </div>
+
+		  <div class="item item-body">
+			<img class="full-image" ng-src="{{post.post_featured_img}}">
+			<p>
+			  {{post.post_content}}
+			</p>
+			<p>
+			  <a href="#" class="subdued">1 Like</a>
+			  <a href="#" class="subdued">5 Comments</a>
+			</p>
+		  </div>
+
+		  <div class="item tabs tabs-secondary tabs-icon-left">
+			<a class="tab-item" href="#">
+			  <i class="icon ion-thumbsup"></i>
+			  Like
+			</a>
+			<a class="tab-item" href="#/tab/dash/comments/{{post.id}}">
+			  <i class="icon ion-chatbox"></i>
+			  Comment
+			</a>
+			<a class="tab-item" href="#">
+			  <i class="icon ion-share"></i>
+			  Share
+			</a>
+		  </div>
+
+		</div>
+	</ion-content>
+</ion-view>
